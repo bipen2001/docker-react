@@ -20,7 +20,7 @@ jobs:
 
     - name: run tests
       working-directory: main
-      run: docker run bipen2001/docker-react npm run test -- --coverage
+      run: sudo docker run -e CI=True  bipen2001/docker-react npm run test -- --coverage 
    
 
  
