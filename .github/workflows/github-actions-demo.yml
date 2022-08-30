@@ -23,7 +23,19 @@ jobs:
       run: sudo docker run -e CI=True  bipen2001/docker-react npm run test -- --coverage
 
     - name: Generate deployment package
-      run: zip -r main.zip . -x '*.git*''*node_modules*'  
+      run: zip -r main.zip ./main -x '*node_modules*'  
+
+    
+    - name: Deploy to EB
+      uses: einaregilsson/beanstalk-deploy@v20
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: dockerReact
+        environment_name: Dockerreact-env
+        version_label: 12345
+        region: us-east-1
+        deployment_package: main.zip  
    
 
  
