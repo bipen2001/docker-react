@@ -25,9 +25,6 @@ jobs:
     - name: Generate deployment package
       run: zip -r main.zip ./main -x '*node_modules*'  
     
-    
-
-
     - name: Deploy to EB
       uses: einaregilsson/beanstalk-deploy@v20
       with:
@@ -39,6 +36,7 @@ jobs:
         region: us-east-1
         deployment_package: main.zip  
         existing_bucket_name: elasticbeanstalk-us-east-1-404725089058
+        
 
     - name: Deployed!
       run: echo App deployed to ELB
