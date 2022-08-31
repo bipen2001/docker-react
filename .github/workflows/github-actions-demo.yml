@@ -25,18 +25,7 @@ jobs:
     - name: Generate deployment package
       run: zip -r main.zip ./main -x '*node_modules*'  
     
-    - name: Get timestamp
-      uses: gerred/actions/current-time@master
-      id: current-time
     
-    - name: Run string replace
-      uses: frabert/replace-string-action@master
-      id: format-time
-      with:
-          pattern: '[:\.]+'
-          string: "${{ steps.current-time.outputs.time }}"
-          replace-with: '-'
-          flags: 'g'
 
 
     - name: Deploy to EB
@@ -46,7 +35,7 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: dockerReact
         environment_name: Dockerreact-env
-        version_label: my-app-${{ steps.format-time.outputs.replaced }}
+        version_label: sample Application
         region: us-east-1
         deployment_package: main.zip  
         existing_bucket_name: elasticbeanstalk-us-east-1-404725089058
