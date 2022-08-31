@@ -23,7 +23,7 @@ jobs:
       run: sudo docker run -e CI=True  bipen2001/docker-react npm run test -- --coverage
 
     - name: Generate deployment package
-      run: zip -r main-latest.zip ./main -x '*node_modules*'  
+      run: zip -r main.zip ./main -x '*node_modules*'  
     
     - name: Get timestamp
       uses: gerred/actions/current-time@master
@@ -48,7 +48,7 @@ jobs:
         environment_name: Dockerreact-env
         version_label: my-app-${{ steps.format-time.outputs.replaced }}
         region: us-east-1
-        deployment_package: main-latest.zip  
+        deployment_package: main.zip  
         existing_bucket_name: elasticbeanstalk-us-east-1-404725089058
 
     - name: Deployed!
