@@ -16,7 +16,7 @@ jobs:
 
     - name: Build the Docker image
       working-directory: main
-      run: docker build -t bipen2001/docker-react -f Dockerfile .
+      run: docker build -t bipen2001/docker-react -f Dockerfile.dev .
 
     - name: run tests
       working-directory: main
