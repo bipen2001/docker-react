@@ -1,0 +1,10 @@
+branch-defaults:
+  main:
+    environment: ReactDocker-$CIRCLECI_BRANCH
+  develop:
+    environment:  ReactDocker-$CIRCLECI_BRANCH
+global:
+  application_name:  ReactDocker
+  default_platform: 64bit Amazon Linux 2/3.4.16
+  default_region: us-east-1
+  sc: git
