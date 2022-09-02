@@ -3,7 +3,7 @@ orbs:
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
 jobs: 
   build_container:
-    machine: # executor type
+    machine: # executor typ
       image: ubuntu-2004:202010-01
     steps:
       - checkout
