@@ -31,7 +31,7 @@ jobs:
         - run: eb --version
         - run:
             name: deploying with awsebcli
-            command: eb deploy  ReactDocker-$CIRCLE_BRANCH           
+            command: eb deploy  Reactdockermain-env           
 workflows:
   version: 2.1
   build_and_test:
