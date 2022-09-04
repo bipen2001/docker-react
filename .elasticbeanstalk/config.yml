@@ -1,9 +1,0 @@
-branch-defaults:
-  main:
-    environment: Reactdocker-env
-
-global:
-  application_name: ReactDocker
-  default_platform: 64bit Amazon Linux 2/3.4.16
-  default_region: us-east-1
-  sc: git
