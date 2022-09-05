@@ -20,4 +20,4 @@ services:
       - /app/node_modules
       - .:/app     
       # overiding the startup command of docker file
-    command: ["npm","run","start"]  
+    command: ["npm","run","test"]  
